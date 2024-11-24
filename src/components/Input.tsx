@@ -1,4 +1,5 @@
 import type { Signal } from "@preact/signals";
+import Column from "./Column";
 
 interface Props {
   id: string;
@@ -9,7 +10,7 @@ interface Props {
 
 export default function Input({ id, type, label, value }: Props) {
   return (
-    <div className="flex flex-col gap-1">
+    <Column className="gap-1">
       <p id={`${id}-label`} className="text-sm">
         {label}
       </p>
@@ -20,6 +21,6 @@ export default function Input({ id, type, label, value }: Props) {
         aria-labelledby={`${id}-label`}
         value={value.value}
       />
-    </div>
+    </Column>
   );
 }

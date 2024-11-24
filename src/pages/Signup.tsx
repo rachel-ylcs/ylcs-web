@@ -4,6 +4,7 @@ import useTitle from "../hooks/useTitle";
 import toast from "react-hot-toast";
 import Link from "../components/Link";
 import IconTitleBanner from "../components/IconTitleBanner";
+import Column from "../components/Column";
 
 const username = signal("");
 const password = signal("");
@@ -18,7 +19,7 @@ export default function Signup() {
   useTitle("注册");
 
   return (
-    <div className="flex flex-col gap-4 mx-6 h-screen place-content-center">
+    <Column className="gap-4 mx-6 h-screen place-content-center">
       <IconTitleBanner />
 
       <Input type="text" id="username" label="用户名" value={username} />
@@ -42,6 +43,6 @@ export default function Signup() {
       <p>
         已有账号？去<Link href="/login">登录</Link>
       </p>
-    </div>
+      </Column>
   );
 }
