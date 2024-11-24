@@ -4,15 +4,31 @@ import "@unocss/reset/tailwind.css";
 import "uno.css";
 import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
+import PageWrapper from "./components/PageWrapper";
+import Signup from "./pages/Signup";
+import ResetPassword from "./pages/ResetPassword";
 
 export default function App() {
   return (
     <>
       <Switch>
-        <Route path="login">
-          <Login />
+        <Route path="/login">
+          <PageWrapper>
+            <Login />
+          </PageWrapper>
+        </Route>
+        <Route path="/signup">
+          <PageWrapper>
+            <Signup />
+          </PageWrapper>
+        </Route>
+        <Route path="/reset-password">
+          <PageWrapper>
+            <ResetPassword />
+          </PageWrapper>
         </Route>
       </Switch>
+
       <Toaster />
     </>
   );
