@@ -1,10 +1,11 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
-import favicon from "../../public/favicon.webp";
-import title from "../../public/title.webp";
+import favicon from "/favicon.webp?url";
+import title from "/title.webp?url";
 import Link from "../components/Link";
 import PageWrapper from "../components/PageWrapper";
 import toast from "react-hot-toast";
+import useTitle from "../hooks/useTitle";
 
 const username = signal("");
 const password = signal("");
@@ -14,6 +15,8 @@ function doLogin() {
 }
 
 export default function Login() {
+  useTitle("登录");
+
   return (
     <PageWrapper>
       <div className="flex flex-col gap-4 mx-6 h-screen place-content-center">
