@@ -1,12 +1,20 @@
 import { render } from "preact";
+import { Route, Switch } from "wouter-preact";
 import "@unocss/reset/tailwind.css";
 import "uno.css";
+import Login from "./pages/Login";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
-    <div className="grid place-items-center h-screen">
-      <div className="bg-green text-3xl">Hello World!</div>
-    </div>
+    <>
+      <Switch>
+        <Route path="login">
+          <Login />
+        </Route>
+      </Switch>
+      <Toaster />
+    </>
   );
 }
 
