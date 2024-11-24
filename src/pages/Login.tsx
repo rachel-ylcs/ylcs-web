@@ -14,7 +14,17 @@ const username = signal("");
 const password = signal("");
 
 function doLogin() {
-  toast("doLogin");
+  if (!username.value) {
+    toast("请输入用户名");
+    return;
+  }
+
+  if (!password.value) {
+    toast("请输入密码");
+    return;
+  }
+
+  toast(`Login with ${username.value} and ${password.value}`);
 }
 
 export default function Login() {

@@ -12,7 +12,34 @@ const passwordAgain = signal("");
 const inviterName = signal("");
 
 function doSignup() {
-  toast("doSignup");
+  if (!username.value) {
+    toast("请输入用户名");
+    return;
+  }
+
+  if (!password.value) {
+    toast("请输入密码");
+    return;
+  }
+
+  if (!passwordAgain.value) {
+    toast("请再次输入密码");
+    return;
+  }
+
+  if (password.value !== passwordAgain.value) {
+    toast("两次输入的密码不一致");
+    return;
+  }
+
+  if (!passwordAgain.value) {
+    toast("请输入邀请人");
+    return;
+  }
+
+  toast(
+    `Signup with ${username.value} and ${password.value} and ${inviterName.value}`,
+  );
 }
 
 export default function Signup() {
@@ -43,6 +70,6 @@ export default function Signup() {
       <p>
         已有账号？去<Link href="/login">登录</Link>
       </p>
-      </Column>
+    </Column>
   );
 }

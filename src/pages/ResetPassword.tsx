@@ -12,7 +12,27 @@ const newPassword = signal();
 const newPasswordAgain = signal();
 
 function doResetPassword() {
-  toast("doResetPassword");
+  if (!username.value) {
+    toast("请输入用户名");
+    return;
+  }
+
+  if (!newPassword.value) {
+    toast("请输入新密码");
+    return;
+  }
+
+  if (!newPasswordAgain.value) {
+    toast("请再次输入新密码");
+    return;
+  }
+
+  if (newPassword.value !== newPasswordAgain.value) {
+    toast("两次输入的密码不一致");
+    return;
+  }
+
+  toast(`ResetPassword with ${username.value} and ${newPassword.value}`);
 }
 
 export default function ResetPassword() {
