@@ -24,7 +24,7 @@ export default function Input({
       <input
         id={`${id}-input`}
         type={type}
-        className="border-1.5 bg-zinc-50 rounded h-8 outline-none px-2 focus:border-[#4682B4]"
+        className="border-1.5 bg-[#F8F8FF] rounded h-8 outline-none px-2 focus:border-[#4682B4]"
         aria-labelledby={`${id}-label`}
         value={value.value}
         disabled={disabled}

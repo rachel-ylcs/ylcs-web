@@ -2,11 +2,11 @@ import { signal } from "@preact/signals";
 import IconTitleBanner from "../components/IconTitleBanner";
 import useTitle from "../hooks/useTitle";
 import Input from "../components/Input";
-import toast from "react-hot-toast";
 import Link from "../components/Link";
 import Row from "../components/Row";
 import Column from "../components/Column";
 import PrimaryButton from "../components/PrimaryButton";
+import { Toast } from "../utils/toast";
 
 const username = signal();
 const newPassword = signal();
@@ -14,26 +14,28 @@ const newPasswordAgain = signal();
 
 function doResetPassword() {
   if (!username.value) {
-    toast("请输入用户名");
+    Toast.warn("请输入用户名");
     return;
   }
 
   if (!newPassword.value) {
-    toast("请输入新密码");
+    Toast.warn("请输入新密码");
     return;
   }
 
   if (!newPasswordAgain.value) {
-    toast("请再次输入新密码");
+    Toast.warn("请再次输入新密码");
     return;
   }
 
   if (newPassword.value !== newPasswordAgain.value) {
-    toast("两次输入的密码不一致");
+    Toast.warn("两次输入的密码不一致");
     return;
   }
 
-  toast(`ResetPassword with ${username.value} and ${newPassword.value}`);
+  Toast.success(
+    `ResetPassword with ${username.value} and ${newPassword.value}`,
+  );
 }
 
 export default function ResetPassword() {

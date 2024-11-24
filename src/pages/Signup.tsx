@@ -1,13 +1,13 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
 import useTitle from "../hooks/useTitle";
-import toast from "react-hot-toast";
 import Link from "../components/Link";
 import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
 import Text from "../components/Text";
 import PrimaryButton from "../components/PrimaryButton";
 import Notice from "../components/Notice";
+import { Toast } from "../utils/toast";
 
 const username = signal("");
 const password = signal("");
@@ -16,31 +16,31 @@ const inviterName = signal("");
 
 function doSignup() {
   if (!username.value) {
-    toast("请输入用户名");
+    Toast.warn("请输入用户名");
     return;
   }
 
   if (!password.value) {
-    toast("请输入密码");
+    Toast.warn("请输入密码");
     return;
   }
 
   if (!passwordAgain.value) {
-    toast("请再次输入密码");
+    Toast.warn("请再次输入密码");
     return;
   }
 
   if (password.value !== passwordAgain.value) {
-    toast("两次输入的密码不一致");
+    Toast.warn("两次输入的密码不一致");
     return;
   }
 
   if (!passwordAgain.value) {
-    toast("请输入邀请人");
+    Toast.warn("请输入邀请人");
     return;
   }
 
-  toast(
+  Toast.success(
     `Signup with ${username.value} and ${password.value} and ${inviterName.value}`,
   );
 }

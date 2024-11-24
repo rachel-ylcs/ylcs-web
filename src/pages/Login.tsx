@@ -1,7 +1,7 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
 import Link from "../components/Link";
-import toast from "react-hot-toast";
+import { Toast } from "../utils/toast";
 import Text from "../components/Text";
 import useTitle from "../hooks/useTitle";
 import IconTitleBanner from "../components/IconTitleBanner";
@@ -14,16 +14,16 @@ const password = signal("");
 
 function doLogin() {
   if (!username.value) {
-    toast("请输入用户名");
+    Toast.warn("请输入用户名");
     return;
   }
 
   if (!password.value) {
-    toast("请输入密码");
+    Toast.warn("请输入密码");
     return;
   }
 
-  toast(`Login with ${username.value} and ${password.value}`);
+  Toast.success(`Login with ${username.value} and ${password.value}`);
 }
 
 export default function Login() {

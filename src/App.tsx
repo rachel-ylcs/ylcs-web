@@ -3,7 +3,7 @@ import { Route, Switch } from "wouter-preact";
 import "@unocss/reset/tailwind.css";
 import "uno.css";
 import Login from "./pages/Login";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "./utils/toast";
 import PageWrapper from "./components/PageWrapper";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";

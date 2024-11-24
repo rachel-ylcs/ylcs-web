@@ -19,7 +19,6 @@
     "@unocss/reset": "^0.63.6",
     "clsx": "^2.1.1",
     "preact": "^10.24.3",
-    "react-hot-toast": "^2.4.1",
     "resize-observer": "^1.0.4",
     "swr": "^2.2.5",
     "unocss": "=0.61.6",
