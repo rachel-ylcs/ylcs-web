@@ -8,6 +8,10 @@ import PageWrapper from "./components/PageWrapper";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";
 import RachelFan from "./pages/RachelFan";
+import World from "./pages/World";
+import Message from "./pages/Message";
+import Discovery from "./pages/Discovery";
+import Main from "./pages/Main";
 
 export default function App() {
   return (
@@ -29,9 +33,9 @@ export default function App() {
           </PageWrapper>
         </Route>
 
-        <Route path="/rachel-fan">
+        <Route path="/">
           <PageWrapper>
-            <RachelFan />
+            <Main />
           </PageWrapper>
         </Route>
       </Switch>

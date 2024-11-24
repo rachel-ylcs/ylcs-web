@@ -7,7 +7,11 @@ interface Props {
 
 export default function SecondaryButton({ onClick, children }: Props) {
   return (
-    <button type="button" className="bg-[#FFA07A] text-white rounded h-8" onClick={onClick}>
+    <button
+      type="button"
+      className="bg-[#FFA07A] text-white rounded px-2 py-1"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
