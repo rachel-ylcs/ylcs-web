@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import Link from "../components/Link";
 import Row from "../components/Row";
 import Column from "../components/Column";
+import PrimaryButton from "../components/PrimaryButton";
 
 const username = signal();
 const newPassword = signal();
@@ -56,13 +57,7 @@ export default function ResetPassword() {
         value={newPasswordAgain}
       />
 
-      <button
-        type="button"
-        className="border rounded-lg bg-blue-600 h-8 text-white"
-        onClick={doResetPassword}
-      >
-        提交申请
-      </button>
+      <PrimaryButton onClick={doResetPassword}>提交申请</PrimaryButton>
 
       <Row className="justify-end">
         <Link href="/login">返回登录</Link>

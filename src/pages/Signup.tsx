@@ -5,6 +5,9 @@ import toast from "react-hot-toast";
 import Link from "../components/Link";
 import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
+import Text from "../components/Text";
+import PrimaryButton from "../components/PrimaryButton";
+import Notice from "../components/Notice";
 
 const username = signal("");
 const password = signal("");
@@ -58,18 +61,13 @@ export default function Signup() {
         value={passwordAgain}
       />
       <Input type="text" id="inviter-id" label="邀请人" value={inviterName} />
+      <Notice>可以在群内捉管理邀请你哦～</Notice>
 
-      <button
-        type="button"
-        className="border rounded-lg bg-blue-600 h-8 text-white"
-        onClick={doSignup}
-      >
-        注册
-      </button>
+      <PrimaryButton onClick={doSignup}>注册</PrimaryButton>
 
-      <p>
+      <Text>
         已有账号？去<Link href="/login">登录</Link>
-      </p>
+      </Text>
     </Column>
   );
 }

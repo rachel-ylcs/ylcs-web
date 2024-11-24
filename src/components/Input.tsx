@@ -18,13 +18,13 @@ export default function Input({
 }: Props) {
   return (
     <Column className="gap-1">
-      <p id={`${id}-label`} className="text-sm">
+      <p id={`${id}-label`} className="text-[15px]">
         {label}
       </p>
       <input
         id={`${id}-input`}
         type={type}
-        className="border-1.5 rounded h-8 outline-none px-2 focus:border-green-700"
+        className="border-1.5 bg-zinc-50 rounded h-8 outline-none px-2 focus:border-[#4682B4]"
         aria-labelledby={`${id}-label`}
         value={value.value}
         disabled={disabled}

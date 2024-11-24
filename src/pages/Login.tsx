@@ -1,14 +1,13 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
-import favicon from "/favicon.webp?url";
-import title from "/title.webp?url";
 import Link from "../components/Link";
-import PageWrapper from "../components/PageWrapper";
 import toast from "react-hot-toast";
+import Text from "../components/Text";
 import useTitle from "../hooks/useTitle";
 import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
 import Row from "../components/Row";
+import PrimaryButton from "../components/PrimaryButton";
 
 const username = signal("");
 const password = signal("");
@@ -36,19 +35,13 @@ export default function Login() {
 
       <Input id="username" type="text" label="用户名 / 昵称" value={username} />
       <Input id="password" type="password" label="密码" value={password} />
-      <button
-        type="button"
-        className="border rounded-lg bg-blue-600 h-8 text-white"
-        onClick={doLogin}
-      >
-        登录
-      </button>
+      <PrimaryButton onClick={doLogin}>登录</PrimaryButton>
 
       <Row className="flex-wrap justify-between gap-4">
-        <p>
+        <Text>
           没有账号？去
           <Link href="/signup">注册</Link>
-        </p>
+        </Text>
         <Link href="/reset-password">找回密码</Link>
       </Row>
     </Column>
