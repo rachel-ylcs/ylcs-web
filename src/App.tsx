@@ -7,6 +7,7 @@ import { Toaster } from "./utils/toast";
 import PageWrapper from "./components/PageWrapper";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";
+import RachelFan from "./pages/RachelFan";
 
 export default function App() {
   return (
@@ -25,6 +26,12 @@ export default function App() {
         <Route path="/reset-password">
           <PageWrapper>
             <ResetPassword />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/rachel-fan">
+          <PageWrapper>
+            <RachelFan />
           </PageWrapper>
         </Route>
       </Switch>

@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://api.yinlin.love/",
+        target: "http://49.235.151.78:1211/",
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },

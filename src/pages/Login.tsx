@@ -8,11 +8,12 @@ import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
 import Row from "../components/Row";
 import PrimaryButton from "../components/PrimaryButton";
+import { login } from "../api/user";
 
 const username = signal("");
 const password = signal("");
 
-function doLogin() {
+async function doLogin() {
   if (!username.value) {
     Toast.warn("请输入用户名");
     return;
@@ -23,7 +24,15 @@ function doLogin() {
     return;
   }
 
-  Toast.success(`Login with ${username.value} and ${password.value}`);
+  const token = await login({
+    username: username.value,
+    password: password.value,
+  });
+  if (token) {
+    Toast.success(`欢迎您，小银子 ${username.value}`);
+    window.localStorage.setItem("token", token);
+    window.location.href = "/rachel-fan";
+  }
 }
 
 export default function Login() {
