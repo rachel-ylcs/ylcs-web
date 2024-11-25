@@ -37,23 +37,26 @@ function NavbarItem({ name, url, activeUrl }: NavbarItemProps) {
 
 export default function Navbar() {
   return (
-    <Row className="fixed left-0 bottom-0 border-t w-screen justify-around py-2 bg-[#F8F8FF] z-20">
-      <NavbarItem name="world" url={worldUrl} activeUrl={worldActiveUrl} />
-      <NavbarItem
-        name="message"
-        url={messageUrl}
-        activeUrl={messageActiveUrl}
-      />
-      <NavbarItem
-        name="discovery"
-        url={discoveryUrl}
-        activeUrl={discoveryActiveUrl}
-      />
-      <NavbarItem
-        name="rachel-fan"
-        url={rachelFanUrl}
-        activeUrl={rachelFanActiveUrl}
-      />
-    </Row>
+    <>
+      <Row className="fixed bottom-0 items-center border-t w-screen justify-around h-12 bg-[#F8F8FF] z-20">
+        <NavbarItem name="world" url={worldUrl} activeUrl={worldActiveUrl} />
+        <NavbarItem
+          name="message"
+          url={messageUrl}
+          activeUrl={messageActiveUrl}
+        />
+        <NavbarItem
+          name="discovery"
+          url={discoveryUrl}
+          activeUrl={discoveryActiveUrl}
+        />
+        <NavbarItem
+          name="rachel-fan"
+          url={rachelFanUrl}
+          activeUrl={rachelFanActiveUrl}
+        />
+      </Row>
+      <div className="w-screen h-12" />
+    </>
   );
 }
