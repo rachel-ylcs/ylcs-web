@@ -19,7 +19,7 @@ export class Toast {
     }
     setTimeoutId = setTimeout(() => {
       currentToast.value = null;
-    }, 3000);
+    }, 2000);
   }
 
   static success(text: string) {
@@ -37,7 +37,7 @@ export class Toast {
 
 export function Toaster() {
   return (
-    <div className="fixed left-[50%] top-[80%] -translate-[60%] pointer-events-none">
+    <div className="fixed left-[50%] top-[75%] -translate-[60%] pointer-events-none">
       {currentToast.value && (
         <ToastComponent className={currentToast.value.className}>
           {currentToast.value.text}

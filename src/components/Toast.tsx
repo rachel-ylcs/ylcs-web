@@ -1,8 +1,8 @@
 import type { ComponentChildren } from "preact";
-import Row from "./Row";
 import Text from "./Text";
 import cuteRachelUrl from "/cute-rachel.webp?url";
 import clsx from "clsx";
+import { motion } from "motion/react";
 
 interface Props {
   className?: string;
@@ -11,7 +11,10 @@ interface Props {
 
 export default function Toast({ className, children }: Props) {
   return (
-    <Row className="w-fit items-end">
+    <motion.div
+      className="flex w-fit items-end"
+      animate={[{ y: "20%" }, { opacity: 0, transition: { delay: 1.8 } }]}
+    >
       <img
         className="w-12 h-auto translate-x-[50%]"
         src={cuteRachelUrl}
@@ -25,6 +28,6 @@ export default function Toast({ className, children }: Props) {
       >
         <Text className="text-white">{children}</Text>
       </div>
-    </Row>
+    </motion.div>
   );
 }
