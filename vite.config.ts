@@ -13,6 +13,9 @@ export default defineConfig({
         target: "http://49.235.151.78:1211/",
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
+      "/public": {
+        target: "http://49.235.151.78:1211/",
+      },
     },
   },
 });

@@ -40,7 +40,7 @@ interface Props {
 
 export default function Navbar({ activeTab }: Props) {
   return (
-    <Row className="fixed left-0 bottom-0 border-t w-screen justify-around py-2">
+    <Row className="fixed left-0 bottom-0 border-t w-screen justify-around py-2 bg-[#F8F8FF] z-20">
       <NavbarItem
         name="world"
         activeTab={activeTab}

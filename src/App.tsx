@@ -1,21 +1,27 @@
 import { render } from "preact";
 import { Route, Switch } from "wouter-preact";
-import "@unocss/reset/tailwind.css";
-import "uno.css";
 import Login from "./pages/Login";
 import { Toaster } from "./utils/toast";
 import PageWrapper from "./components/PageWrapper";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";
-import RachelFan from "./pages/RachelFan";
-import World from "./pages/World";
-import Message from "./pages/Message";
-import Discovery from "./pages/Discovery";
+import fetcher from "./utils/fetcher";
 import Main from "./pages/Main";
+import { SWRConfig } from "swr";
+
+import "@unocss/reset/tailwind.css";
+import "uno.css";
 
 export default function App() {
   return (
     <>
+      <SWRConfig
+        value={{
+          fetcher,
+          shouldRetryOnError: false,
+        }}
+      />
+
       <Switch>
         <Route path="/login">
           <PageWrapper>
