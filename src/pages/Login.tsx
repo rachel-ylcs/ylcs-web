@@ -1,6 +1,6 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
-import Link from "../components/Link";
+import InternalLink from "../components/InternalLink";
 import { Toast } from "../utils/toast";
 import Text from "../components/Text";
 import useTitle from "../hooks/useTitle";
@@ -49,9 +49,9 @@ export default function Login() {
       <Row className="flex-wrap justify-between gap-4">
         <Text>
           没有账号？去
-          <Link href="/signup">注册</Link>
+          <InternalLink href="/signup">注册</InternalLink>
         </Text>
-        <Link href="/reset-password">找回密码</Link>
+        <InternalLink href="/reset-password">找回密码</InternalLink>
       </Row>
     </Column>
   );

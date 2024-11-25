@@ -9,7 +9,7 @@ export default function Message() {
     <>
       <Text>消息</Text>
 
-      <Navbar activeTab="message" />
+      <Navbar />
     </>
   );
 }

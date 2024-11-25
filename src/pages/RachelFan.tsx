@@ -20,7 +20,7 @@ export default function RachelFan() {
     <>
       <PrimaryButton onClick={doLogout}>注销</PrimaryButton>
 
-      <Navbar activeTab="rachel-fan" />
+      <Navbar />
     </>
   );
 }

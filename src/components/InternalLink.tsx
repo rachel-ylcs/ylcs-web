@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import type { ComponentChildren } from "preact";
+import { Link } from "wouter-preact";
 
 interface Props {
   className?: string;
@@ -7,13 +8,13 @@ interface Props {
   children: ComponentChildren;
 }
 
-export default function Link({ className, href, children }: Props) {
+export default function InternalLink({ className, href, children }: Props) {
   return (
-    <a
+    <Link
       className={clsx("w-fit text-[#4682B4] text-[15px]", className)}
       href={href}
     >
       {children}
-    </a>
+    </Link>
   );
 }

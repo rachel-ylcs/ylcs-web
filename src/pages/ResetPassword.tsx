@@ -2,7 +2,7 @@ import { signal } from "@preact/signals";
 import IconTitleBanner from "../components/IconTitleBanner";
 import useTitle from "../hooks/useTitle";
 import Input from "../components/Input";
-import Link from "../components/Link";
+import InternalLink from "../components/InternalLink";
 import Row from "../components/Row";
 import Column from "../components/Column";
 import PrimaryButton from "../components/PrimaryButton";
@@ -62,7 +62,7 @@ export default function ResetPassword() {
       <PrimaryButton onClick={doResetPassword}>提交申请</PrimaryButton>
 
       <Row className="justify-end">
-        <Link href="/login">返回登录</Link>
+        <InternalLink href="/login">返回登录</InternalLink>
       </Row>
     </Column>
   );

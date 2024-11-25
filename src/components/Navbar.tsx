@@ -1,5 +1,5 @@
-import type { Signal } from "@preact/signals";
 import Row from "./Row";
+import { useLocation } from "wouter-preact";
 import discoveryUrl from "/tabs/discovery.webp?url";
 import discoveryActiveUrl from "/tabs/discovery-active.webp?url";
 import messageUrl from "/tabs/message.webp?url";
@@ -13,55 +13,44 @@ export type NavbarType = "world" | "message" | "discovery" | "rachel-fan";
 
 interface NavbarItemProps {
   name: NavbarType;
-  activeTab: NavbarType;
   url: string;
   activeUrl: string;
 }
 
-function NavbarItem({ name, activeTab, url, activeUrl }: NavbarItemProps) {
+function NavbarItem({ name, url, activeUrl }: NavbarItemProps) {
+  const [location, navigate] = useLocation();
+
   return (
     <img
       className="size-8 cursor-pointer"
-      src={activeTab === name ? activeUrl : url}
+      src={location === `/${name}` ? activeUrl : url}
       onClick={() => {
-        window.location.href = name;
+        navigate(`/${name}`);
       }}
       onKeyPress={() => {
-        window.location.href = name;
+        navigate(`/${name}`);
       }}
       aria-label={`${name} Tab`}
     />
   );
 }
 
-interface Props {
-  activeTab: NavbarType;
-}
-
-export default function Navbar({ activeTab }: Props) {
+export default function Navbar() {
   return (
     <Row className="fixed left-0 bottom-0 border-t w-screen justify-around py-2 bg-[#F8F8FF] z-20">
-      <NavbarItem
-        name="world"
-        activeTab={activeTab}
-        url={worldUrl}
-        activeUrl={worldActiveUrl}
-      />
+      <NavbarItem name="world" url={worldUrl} activeUrl={worldActiveUrl} />
       <NavbarItem
         name="message"
-        activeTab={activeTab}
         url={messageUrl}
         activeUrl={messageActiveUrl}
       />
       <NavbarItem
         name="discovery"
-        activeTab={activeTab}
         url={discoveryUrl}
         activeUrl={discoveryActiveUrl}
       />
       <NavbarItem
         name="rachel-fan"
-        activeTab={activeTab}
         url={rachelFanUrl}
         activeUrl={rachelFanActiveUrl}
       />

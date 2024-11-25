@@ -1,7 +1,7 @@
 import { signal } from "@preact/signals";
 import Input from "../components/Input";
 import useTitle from "../hooks/useTitle";
-import Link from "../components/Link";
+import InternalLink from "../components/InternalLink";
 import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
 import Text from "../components/Text";
@@ -66,7 +66,7 @@ export default function Signup() {
       <PrimaryButton onClick={doSignup}>注册</PrimaryButton>
 
       <Text>
-        已有账号？去<Link href="/login">登录</Link>
+        已有账号？去<InternalLink href="/login">登录</InternalLink>
       </Text>
     </Column>
   );

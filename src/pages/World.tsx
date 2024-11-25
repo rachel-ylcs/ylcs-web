@@ -11,7 +11,7 @@ export default function World() {
         <Text className="text-[#4682B4] text-2xl">世界因你更精彩！</Text>
       </div>
 
-      <Navbar activeTab="world" />
+      <Navbar />
     </>
   );
 }

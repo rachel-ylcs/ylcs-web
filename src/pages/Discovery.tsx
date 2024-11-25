@@ -29,7 +29,7 @@ export default function Discovery() {
         )}
       </div>
 
-      <Navbar activeTab="discovery" />
+      <Navbar />
     </>
   );
 }
