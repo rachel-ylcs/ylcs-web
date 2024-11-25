@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { assetsBaseUrl } from "../api/base";
 import Column from "./Column";
 import Icon from "./Icon";
@@ -22,11 +23,16 @@ export default function TopicCard({
   comments,
 }: Props) {
   return (
-    <Column className="items-center gap-2 p-2 my-2 border rounded-lg">
+    <Column
+      className={clsx(
+        "items-center gap-2 pb-2 mb-2 border rounded-lg shadow break-inside-avoid",
+        { "pt-2": !picture },
+      )}
+    >
       {/* biome-ignore lint/a11y/useAltText: <explanation> */}
       {picture && (
         <img
-          className="w-full"
+          className="w-full rounded-t-lg"
           src={`${assetsBaseUrl}/users/${userId}/pics/${picture}.webp`}
         />
       )}
@@ -41,12 +47,12 @@ export default function TopicCard({
       </Row>
       <Row className="gap-2 justify-around w-full">
         <Row className="gap-1 items-center">
-          <Icon className="size-4 text-black" icon="i-mdi-coins-outline" />
-          <Text>{coins}</Text>
-        </Row>
-        <Row className="gap-1 items-center">
           <Icon className="size-4 text-black" icon="i-mdi-comment-outline" />
           <Text>{comments}</Text>
+        </Row>
+        <Row className="gap-1 items-center">
+          <Icon className="size-4 text-black" icon="i-mdi-coins-outline" />
+          <Text>{coins}</Text>
         </Row>
       </Row>
     </Column>

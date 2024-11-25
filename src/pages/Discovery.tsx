@@ -10,7 +10,7 @@ export default function Discovery() {
   return (
     <>
       {data ? (
-        <div className="columns-2 sm:columns-3 px-2">
+        <div className="columns-2 sm:columns-3 p-2">
           {data.map((item) => (
             <TopicCard
               key={item.tid}
