@@ -25,44 +25,18 @@ export default function App() {
         }}
       />
 
-      <Switch>
-        <Route path="/login">
-          <PageWrapper>
-            <Login />
-          </PageWrapper>
-        </Route>
-        <Route path="/signup">
-          <PageWrapper>
-            <Signup />
-          </PageWrapper>
-        </Route>
-        <Route path="/reset-password">
-          <PageWrapper>
-            <ResetPassword />
-          </PageWrapper>
-        </Route>
+      <PageWrapper>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/reset-password" component={ResetPassword} />
 
-        <Route path="/world">
-          <PageWrapper>
-            <World />
-          </PageWrapper>
-        </Route>
-        <Route path="/message">
-          <PageWrapper>
-            <Message />
-          </PageWrapper>
-        </Route>
-        <Route path="/discovery">
-          <PageWrapper>
-            <Discovery />
-          </PageWrapper>
-        </Route>
-        <Route path="/rachel-fan">
-          <PageWrapper>
-            <RachelFan />
-          </PageWrapper>
-        </Route>
-      </Switch>
+          <Route path="/world" component={World} />
+          <Route path="/message" component={Message} />
+          <Route path="/discovery" component={Discovery} />
+          <Route path="/rachel-fan" component={RachelFan} />
+        </Switch>
+      </PageWrapper>
 
       <Toaster />
     </>

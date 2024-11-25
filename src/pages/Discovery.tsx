@@ -1,5 +1,4 @@
 import { useTopic } from "../api/topic";
-import Navbar from "../components/Navbar";
 import TopicCard from "../components/TopicCard";
 import useTitle from "../hooks/useTitle";
 
@@ -28,8 +27,6 @@ export default function Discovery() {
           <div className="size-48 bg-red" />
         )}
       </div>
-
-      <Navbar />
     </>
   );
 }
