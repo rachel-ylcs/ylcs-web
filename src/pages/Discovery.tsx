@@ -1,32 +1,33 @@
 import { useTopic } from "../api/topic";
+import Loading from "../components/Loading";
 import TopicCard from "../components/TopicCard";
 import useTitle from "../hooks/useTitle";
 
 export default function Discovery() {
   useTitle("发现");
-  const { data, isLoading } = useTopic();
+  const { data } = useTopic();
 
   return (
     <>
-      <div className="grid gap-2 grid-cols-2 sm:grid-cols-3">
-        {isLoading ? (
-          data?.map((item) => (
+      {data ? (
+        <div className="columns-2 sm:columns-3 px-2">
+          {data.map((item) => (
             <TopicCard
               key={item.tid}
-              id={item.tid}
               title={item.title}
-              picture={item.picture}
+              picture={item.pic}
               userId={item.uid}
               userName={item.name}
-              isTop={item.isTop}
               coins={item.coinNum}
               comments={item.commentNum}
             />
-          ))
-        ) : (
-          <div className="size-48 bg-red" />
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="grid place-content-center h-screen">
+          <Loading />
+        </div>
+      )}
     </>
   );
 }

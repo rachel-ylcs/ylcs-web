@@ -5,7 +5,7 @@ interface TopicItem {
   uid: number;
   name: string;
   title: string;
-  picture: string;
+  pic: string | null;
   isTop: boolean;
   coinNum: number;
   commentNum: number;

@@ -5,33 +5,31 @@ import Row from "./Row";
 import Text from "./Text";
 
 interface Props {
-  id: number;
   title: string;
-  picture: string;
+  picture: string | null;
   userId: number;
   userName: string;
-  isTop: boolean;
   coins: number;
   comments: number;
 }
 
 export default function TopicCard({
-  id,
   title,
   picture,
   userId,
   userName,
-  isTop,
   coins,
   comments,
 }: Props) {
   return (
-    <Column className="items-center gap-2 p-2 border rounded">
+    <Column className="items-center gap-2 p-2 my-2 border rounded-lg">
       {/* biome-ignore lint/a11y/useAltText: <explanation> */}
-      <img
-        className="size-[100%]"
-        src={`${assetsBaseUrl}/users/${userId}/pics/${picture}.webp`}
-      />
+      {picture && (
+        <img
+          className="w-full"
+          src={`${assetsBaseUrl}/users/${userId}/pics/${picture}.webp`}
+        />
+      )}
       <Text className="font-700">{title}</Text>
       <Row className="items-center gap-2">
         <img

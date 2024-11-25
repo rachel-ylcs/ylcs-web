@@ -23,20 +23,20 @@ export default function App() {
           fetcher,
           shouldRetryOnError: false,
         }}
-      />
+      >
+        <PageWrapper>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/reset-password" component={ResetPassword} />
 
-      <PageWrapper>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/reset-password" component={ResetPassword} />
-
-          <Route path="/world" component={World} />
-          <Route path="/message" component={Message} />
-          <Route path="/discovery" component={Discovery} />
-          <Route path="/rachel-fan" component={RachelFan} />
-        </Switch>
-      </PageWrapper>
+            <Route path="/world" component={World} />
+            <Route path="/message" component={Message} />
+            <Route path="/discovery" component={Discovery} />
+            <Route path="/rachel-fan" component={RachelFan} />
+          </Switch>
+        </PageWrapper>
+      </SWRConfig>
 
       <Toaster />
     </>
