@@ -31,7 +31,7 @@ async function doLogin() {
   if (token) {
     Toast.success(`欢迎您，小银子 ${username.value}`);
     window.localStorage.setItem("token", token);
-    window.location.href = "/";
+    window.location.href = "/rachel-fan";
   }
 }
 

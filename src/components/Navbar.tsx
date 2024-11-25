@@ -13,7 +13,7 @@ export type NavbarType = "world" | "message" | "discovery" | "rachel-fan";
 
 interface NavbarItemProps {
   name: NavbarType;
-  activeTab: Signal<NavbarType>;
+  activeTab: NavbarType;
   url: string;
   activeUrl: string;
 }
@@ -22,12 +22,12 @@ function NavbarItem({ name, activeTab, url, activeUrl }: NavbarItemProps) {
   return (
     <img
       className="size-8 cursor-pointer"
-      src={activeTab.value === name ? activeUrl : url}
+      src={activeTab === name ? activeUrl : url}
       onClick={() => {
-        activeTab.value = name;
+        window.location.href = name;
       }}
       onKeyPress={() => {
-        activeTab.value = name;
+        window.location.href = name;
       }}
       aria-label={`${name} Tab`}
     />
@@ -35,7 +35,7 @@ function NavbarItem({ name, activeTab, url, activeUrl }: NavbarItemProps) {
 }
 
 interface Props {
-  activeTab: Signal<NavbarType>;
+  activeTab: NavbarType;
 }
 
 export default function Navbar({ activeTab }: Props) {

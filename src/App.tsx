@@ -5,8 +5,11 @@ import { Toaster } from "./utils/toast";
 import PageWrapper from "./components/PageWrapper";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";
+import World from "./pages/World";
+import Message from "./pages/Message";
+import Discovery from "./pages/Discovery";
+import RachelFan from "./pages/RachelFan";
 import fetcher from "./utils/fetcher";
-import Main from "./pages/Main";
 import { SWRConfig } from "swr";
 
 import "@unocss/reset/tailwind.css";
@@ -39,9 +42,24 @@ export default function App() {
           </PageWrapper>
         </Route>
 
-        <Route path="/">
+        <Route path="/world">
           <PageWrapper>
-            <Main />
+            <World />
+          </PageWrapper>
+        </Route>
+        <Route path="/message">
+          <PageWrapper>
+            <Message />
+          </PageWrapper>
+        </Route>
+        <Route path="/discovery">
+          <PageWrapper>
+            <Discovery />
+          </PageWrapper>
+        </Route>
+        <Route path="/rachel-fan">
+          <PageWrapper>
+            <RachelFan />
           </PageWrapper>
         </Route>
       </Switch>
