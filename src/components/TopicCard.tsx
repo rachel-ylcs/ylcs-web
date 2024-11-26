@@ -1,13 +1,13 @@
 import clsx from "clsx";
-import { assetsBaseUrl } from "../api/base";
 import Column from "./Column";
 import Icon from "./Icon";
 import Row from "./Row";
 import Text from "./Text";
+import { getTopicFirstPictureUrl, getUserAvatarUrl } from "../api/pictures";
 
 interface Props {
   title: string;
-  picture: string | null;
+  pictureId: string | null;
   userId: number;
   userName: string;
   coins: number;
@@ -16,7 +16,7 @@ interface Props {
 
 export default function TopicCard({
   title,
-  picture,
+  pictureId,
   userId,
   userName,
   coins,
@@ -26,21 +26,21 @@ export default function TopicCard({
     <Column
       className={clsx(
         "items-center gap-2 pb-2 mb-2 border rounded-lg shadow break-inside-avoid",
-        { "pt-2": !picture },
+        { "pt-2": !pictureId },
       )}
     >
       {/* biome-ignore lint/a11y/useAltText: <explanation> */}
-      {picture && (
+      {pictureId && (
         <img
           className="w-full rounded-t-lg"
-          src={`${assetsBaseUrl}/users/${userId}/pics/${picture}.webp`}
+          src={getTopicFirstPictureUrl({ userId, pictureId })}
         />
       )}
       <Text className="font-700">{title}</Text>
       <Row className="items-center gap-2">
         <img
           className="rounded-full size-8"
-          src={`${assetsBaseUrl}/users/${userId}/avatar.webp`}
+          src={getUserAvatarUrl({ userId })}
           alt={`avatar of ${userName}`}
         />
         <Text>{userName}</Text>

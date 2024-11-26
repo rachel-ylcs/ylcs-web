@@ -15,7 +15,7 @@ export default function Discovery() {
             <TopicCard
               key={item.tid}
               title={item.title}
-              picture={item.pic}
+              pictureId={item.pic}
               userId={item.uid}
               userName={item.name}
               coins={item.coinNum}
