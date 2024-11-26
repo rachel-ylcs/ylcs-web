@@ -1,4 +1,5 @@
 import { useData } from "../hooks/useData";
+import type { EmptyRequestType } from "./base";
 
 interface TopicItem {
   tid: number;
@@ -11,8 +12,8 @@ interface TopicItem {
   commentNum: number;
 }
 
-export function useTopic() {
-  return useData<Record<string, never>, TopicItem[]>({
+export function useTopics() {
+  return useData<EmptyRequestType, TopicItem[]>({
     endpoint: "/user/getHotTopic",
     body: {},
   });

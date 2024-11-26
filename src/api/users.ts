@@ -1,5 +1,24 @@
 import { handleApiError } from "../hooks/apiErrorHandler";
+import { useData } from "../hooks/useData";
 import { apiBaseUrl } from "./base";
+import type { EmptyRequestType } from "./base";
+
+interface User {
+  uid: number;
+  name: string;
+  privilege: number;
+  signature: string;
+  label: string;
+  coin: number;
+  inviterName: string;
+}
+
+export function useUser() {
+  return useData<EmptyRequestType, User>({
+    endpoint: "/user/getInfo",
+    body: {},
+  });
+}
 
 export async function login({
   username,

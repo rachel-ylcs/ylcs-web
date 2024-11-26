@@ -8,7 +8,7 @@ import IconTitleBanner from "../components/IconTitleBanner";
 import Column from "../components/Column";
 import Row from "../components/Row";
 import PrimaryButton from "../components/PrimaryButton";
-import { login } from "../api/user";
+import { login } from "../api/users";
 
 const username = signal("");
 const password = signal("");

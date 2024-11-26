@@ -10,3 +10,7 @@ export function getTopicFirstPictureUrl({
 export function getUserAvatarUrl({ userId }: { userId: number }) {
   return `${assetsBaseUrl}/users/${userId}/avatar.webp`;
 }
+
+export function getUserWallPictureUrl({ userId }: { userId: number }) {
+  return `${assetsBaseUrl}/users/${userId}/wall.webp`;
+}

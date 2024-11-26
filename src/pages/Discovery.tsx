@@ -1,11 +1,11 @@
-import { useTopic } from "../api/topic";
+import { useTopics } from "../api/topics";
 import Loading from "../components/Loading";
 import TopicCard from "../components/TopicCard";
 import useTitle from "../hooks/useTitle";
 
 export default function Discovery() {
   useTitle("发现");
-  const { data } = useTopic();
+  const { data } = useTopics();
 
   return (
     <>
